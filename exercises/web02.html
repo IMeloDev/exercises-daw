@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Apuntes HTML - LMSGI</title>
+		<meta charset="UTF-8">
+	</head>
+	<body bgcolor="#0B1E3F" text="#FFFFFF" link="#00FFFF" vlink="#C0C0C0" alink="#FFFF00" leftmargin="40" topmargin="20">
+
+		<!-- ===================== PORTADA ===================== -->
+		<a id="arriba"></a>
+		<marquee behavior="alternate" direction="right" bgcolor="#000080">
+			<font face="Courier New" color="#00FF00" size="3">&lt;html&gt; &lt;head&gt; &lt;body&gt; &lt;p&gt; &lt;a&gt; &lt;img&gt; &lt;ul&gt; &lt;ol&gt; &lt;li&gt; &lt;/html&gt;</font>
+		</marquee>
+
+		<center>
+			<h1>
+				<font face="Courier New" color="#00FF00" size="7">&lt;</font><font face="Arial Black" color="#FFFF00" size="7">APUNTES HTML</font><font face="Courier New" color="#00FF00" size="7">/&gt;</font>
+			</h1>
+			<font face="Arial" color="#00FFFF" size="4"><i>Lenguajes de Marcas y Sistemas de Gestión de Información &middot; 1º DAW</i></font>
+			<br>
+			<font face="Arial" color="#C0C0C0" size="2">Unidad 2: estructura de una página web, texto, imágenes, enlaces y listas</font>
+		</center>
+
+		<hr width="80%" size="4" color="#00FF00" noshade>
+
+		<!-- ===================== ÍNDICE ===================== -->
+		<h2 align="center"><font face="Arial" color="#FFFF00">&#9776; ÍNDICE</font></h2>
+
+		<center>
+			<font face="Arial" size="4">
+				<ol type="I">
+					<li><a href="#tema1">¿Qué es HTML? Etiquetas y atributos</a></li>
+					<li><a href="#tema2">Estructura básica de una página</a></li>
+					<li><a href="#tema3">Etiquetas relacionadas con texto</a></li>
+					<li><a href="#tema4">Caracteres especiales (entidades)</a></li>
+					<li><a href="#tema5">Colores</a></li>
+				</ol>
+			</font>
+		</center>
+
+		<hr width="80%" size="4" color="#00FF00" noshade>
+
+		<!-- ===================== TEMA 1 ===================== -->
+		<h2 id="tema1"><font face="Arial" color="#00FF00">I.</font> <font face="Arial" color="#FFFF00">¿Qué es HTML? Etiquetas y atributos</font></h2>
+
+		<p align="justify">
+			<font face="Arial" size="3">
+				<b>HTML</b> (<i>HyperText Markup Language</i>) es el lenguaje con el que se escriben las páginas web.
+				Es un lenguaje de <b>hipertexto</b>: permite escribir texto de forma estructurada usando <b>etiquetas</b>
+				que marcan el inicio y el fin de cada elemento. Además de texto, una página puede tener imágenes, sonido o vídeo,
+				así que es un documento <b>multimedia</b>.
+			</font>
+		</p>
+
+		<ul type="square">
+			<li><font face="Arial">Los archivos deben tener extensión <font color="#00FF00"><tt>.html</tt></font> o <font color="#00FF00"><tt>.htm</tt></font>.</font></li>
+			<li><font face="Arial">El <b>navegador</b> interpreta el código y muestra la página resultante.</font></li>
+			<li><font face="Arial">En clase escribimos el código con <b>Notepad++</b>.</font></li>
+		</ul>
+
+		<h3><font face="Arial" color="#00FFFF">&#9658; Etiquetas</font></h3>
+		<ul type="disc">
+			<li>
+				<font face="Arial"><b>Etiqueta de apertura:</b> va entre <tt>&lt;</tt> y <tt>&gt;</tt> y puede llevar atributos.</font>
+				<pre><font color="#00FF00">&lt;identificador atributo1="valor" atributo2="valor"&gt;</font></pre>
+			</li>
+			<li>
+				<font face="Arial"><b>Etiqueta de cierre:</b> va entre <tt>&lt;/</tt> y <tt>&gt;</tt> y NUNCA lleva atributos.</font>
+				<pre><font color="#00FF00">&lt;/identificador&gt;</font></pre>
+			</li>
+			<li><font face="Arial">Algunas etiquetas <b>no tienen cierre</b>: <tt>&lt;br&gt;</tt>, <tt>&lt;hr&gt;</tt>, <tt>&lt;img&gt;</tt>, <tt>&lt;meta&gt;</tt>.</font></li>
+		</ul>
+
+		<h3><font face="Arial" color="#00FFFF">&#9658; Atributos</font></h3>
+		<p>
+			<font face="Arial">Añaden propiedades a una etiqueta. Se escriben siempre en la etiqueta de apertura con la forma <tt><font color="#00FF00">nombre="valor"</font></tt>.</font>
+		</p>
+
+		<h3><font face="Arial" color="#00FFFF">&#9658; Anidar etiquetas</font></h3>
+		<p>
+			<font face="Arial">Se pueden meter etiquetas dentro de otras, pero <b><u>nunca se pueden cruzar</u></b>: la última que se abre es la primera que se cierra.</font>
+		</p>
+		<blockquote>
+			<font face="Arial" color="#00FF00">&#10004; Correcto:</font>
+			<pre><font color="#FFFFFF">&lt;p align="center"&gt;&lt;font color="#993366"&gt;Hola&lt;/font&gt;&lt;/p&gt;</font></pre>
+			<font face="Arial" color="#FF0000">&#10008; Incorrecto:</font>
+			<pre><font color="#FFFFFF">&lt;p align="center"&gt;&lt;font color="#993366"&gt;Hola&lt;/p&gt;&lt;/font&gt;</font></pre>
+		</blockquote>
+
+		<p align="right"><a href="#arriba"><font face="Arial" size="2">&#9650; Volver al índice</font></a></p>
+		<hr width="60%" color="#808080">
+
+		<!-- ===================== TEMA 2 ===================== -->
+		<h2 id="tema2"><font face="Arial" color="#00FF00">II.</font> <font face="Arial" color="#FFFF00">Estructura básica de una página</font></h2>
+
+		<p><font face="Arial">Toda página HTML tiene este esqueleto:</font></p>
+
+		<pre><font color="#00FF00">&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Título de la pestaña&lt;/title&gt;
+        &lt;meta charset="UTF-8"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        Aquí va todo lo que se ve en la página
+    &lt;/body&gt;
+&lt;/html&gt;</font></pre>
+
+		<ul>
+			<li>
+				<font face="Arial" color="#FFFF00"><b>&lt;html&gt;</b></font>
+				<ul type="square">
+					<li><font face="Arial">Elemento principal y raíz del documento.</font></li>
+					<li><font face="Arial">Todo el código de la página va dentro de él.</font></li>
+				</ul>
+			</li>
+			<li>
+				<font face="Arial" color="#FFFF00"><b>&lt;head&gt;</b></font>
+				<ul type="square">
+					<li><font face="Arial">Cabecera: información <i>sobre</i> la página que no se ve en ella.</font></li>
+					<li><font face="Arial">Va justo debajo de <tt>&lt;html&gt;</tt>.</font></li>
+					<li><font face="Arial">Dentro suelen ir <tt>&lt;title&gt;</tt> y <tt>&lt;meta&gt;</tt> (y más adelante <tt>&lt;link&gt;</tt>, <tt>&lt;style&gt;</tt> y <tt>&lt;script&gt;</tt>).</font></li>
+				</ul>
+			</li>
+			<li>
+				<font face="Arial" color="#FFFF00"><b>&lt;title&gt;</b></font>
+				<ul type="square">
+					<li><font face="Arial">Texto que aparece en la pestaña/barra de título del navegador.</font></li>
+				</ul>
+			</li>
+			<li>
+				<font face="Arial" color="#FFFF00"><b>&lt;meta&gt;</b></font>
+				<ul type="square">
+					<li><font face="Arial">Indica la codificación de caracteres para que se vean bien las tildes y la ñ.</font></li>
+					<li><font face="Arial">Lo normal: <tt><font color="#00FF00">&lt;meta charset="UTF-8"&gt;</font></tt> (otra opción antigua: ISO-8859-1).</font></li>
+					<li><font face="Arial">Forma larga: <tt><font color="#00FF00">&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;</font></tt></font></li>
+				</ul>
+			</li>
+			<li>
+				<font face="Arial" color="#FFFF00"><b>&lt;body&gt;</b></font>
+				<ul type="square">
+					<li><font face="Arial">Cuerpo: todo lo que se ve en la página.</font></li>
+					<li><font face="Arial">Atributos:</font>
+						<ul type="circle">
+							<li><font face="Arial"><b>bgcolor</b> &rarr; color de fondo.</font></li>
+							<li><font face="Arial"><b>background</b> &rarr; imagen de fondo.</font></li>
+							<li><font face="Arial"><b>text</b> &rarr; color del texto.</font></li>
+							<li><font face="Arial"><b>leftmargin / topmargin</b> &rarr; márgenes izquierdo y superior.</font></li>
+							<li><font face="Arial"><b>link</b> &rarr; color de los enlaces sin visitar.</font></li>
+							<li><font face="Arial"><b>vlink</b> &rarr; color de los enlaces ya visitados.</font></li>
+							<li><font face="Arial"><b>alink</b> &rarr; color del enlace en el momento de pulsarlo.</font></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+
+		<blockquote>
+			<font face="Arial" color="#00FFFF" size="2"><b>&#9998; Ejemplo:</b> esta misma página usa</font>
+			<pre><font color="#00FF00">&lt;body bgcolor="#0B1E3F" text="#FFFFFF" link="#00FFFF" vlink="#C0C0C0" alink="#FFFF00"&gt;</font></pre>
+		</blockquote>
+
+		<p align="right"><a href="#arriba"><font face="Arial" size="2">&#9650; Volver al índice</font></a></p>
+		<hr width="60%" color="#808080">
+
+		<!-- ===================== TEMA 3 ===================== -->
+		<h2 id="tema3"><font face="Arial" color="#00FF00">III.</font> <font face="Arial" color="#FFFF00">Etiquetas relacionadas con texto</font></h2>
+
+		<h3><font face="Arial" color="#00FFFF">&#9658; Títulos: &lt;h1&gt; ... &lt;h6&gt;</font></h3>
+		<p><font face="Arial">Hay 6 niveles, de mayor (h1) a menor (h6). Admiten el atributo <b>align</b> = left | center | right | justify.</font></p>
+		<blockquote>
+			<h1><font face="Arial">Título h1</font></h1>
+			<h3><font face="Arial">Título h3</font></h3>
+			<h6><font face="Arial">Título h6</font></h6>
+		</blockquote>
+
+		<h3><font face="Arial" color="#00FFFF">&#9658; Párrafos y bloques</font></h3>
+		<ul type="square">
+			<li><font face="Arial"><b>&lt;p&gt;</b> &rarr; párrafo. Atributo <b>align</b> (left, center, right, justify).</font></li>
+			<li><font face="Arial"><b>&lt;div&gt;</b> &rarr; bloque/división. También admite <b>align</b>.</font></li>
+			<li><font face="Arial"><b>&lt;center&gt;</b> &rarr; centra todo lo que tiene dentro.</font></li>
+			<li><font face="Arial"><b>&lt;br&gt;</b> &rarr; salto de línea (sin cierre).</font></li>
+			<li><font face="Arial"><b>&lt;pre&gt;</b> &rarr; texto preformateado: respeta los espacios y saltos de línea tal y como se escriben.</font></li>
+			<li><font face="Arial"><b>&lt;blockquote&gt;</b> &rarr; cita; el texto aparece con sangría.</font></li>
+		</ul>
+
+		<h3><font face="Arial" color="#00FFFF">&#9658; Línea horizontal: &lt;hr&gt;</font></h3>
+		<p><font face="Arial">Atributos: <b>align</b>, <b>width</b> (ancho en px o %), <b>size</b> (grosor) y <b>noshade</b> (sin sombra, línea sólida).</font></p>
+		<hr width="50%" size="2" align="left">
+		<hr width="30%" size="6" align="center" noshade>
+
+		<h3><font face="Arial" color="#00FFFF">&#9658; Formato de letra: &lt;font&gt;</font></h3>
+		<ul type="square">
+			<li><font face="Arial"><b>face</b> &rarr; tipo de letra: <font face="Times New Roman">Times New Roman</font>, <font face="Comic Sans MS">Comic Sans MS</font>, <font face="Courier New">Courier New</font>...</font></li>
+			<li><font face="Arial"><b>color</b> &rarr; <font color="red">red</font>, <font color="#00FF00">#00FF00</font>, <font color="yellow">yellow</font>...</font></li>
+			<li><font face="Arial"><b>size</b> &rarr; de 1 a 7: <font size="1">1</font> <font size="2">2</font> <font size="3">3</font> <font size="4">4</font> <font size="5">5</font> <font size="6">6</font> <font size="7">7</font></font></li>
+		</ul>
+
+		<h3><font face="Arial" color="#00FFFF">&#9658; Estilos de texto</font></h3>
+		<ul type="square">
+			<li><font face="Arial"><tt>&lt;b&gt;</tt> &rarr; <b>negrita</b></font></li>
+			<li><font face="Arial"><tt>&lt;i&gt;</tt> &rarr; <i>cursiva</i></font></li>
+			<li><font face="Arial"><tt>&lt;u&gt;</tt> &rarr; <u>subrayado</u></font></li>
+			<li><font face="Arial"><tt>&lt;s&gt;</tt> &rarr; <s>tachado</s></font></li>
+			<li><font face="Arial"><tt>&lt;tt&gt;</tt> &rarr; <tt>letra de máquina de escribir</tt></font></li>
+			<li><font face="Arial"><tt>&lt;big&gt;</tt> &rarr; <big>más grande</big></font></li>
+			<li><font face="Arial"><tt>&lt;small&gt;</tt> &rarr; <small>más pequeño</small></font></li>
+		</ul>
+
+		<h3><font face="Arial" color="#00FFFF">&#9658; Texto en movimiento: &lt;marquee&gt;</font></h3>
+		<ul type="square">
+			<li><font face="Arial"><b>behavior</b> &rarr; scroll (pasa y vuelve a empezar), slide (pasa y se para), alternate (rebota).</font></li>
+			<li><font face="Arial"><b>direction</b> &rarr; up, down, left, right.</font></li>
+			<li><font face="Arial"><b>bgcolor</b> &rarr; color de fondo de la marquesina.</font></li>
+		</ul>
+		<marquee behavior="scroll" direction="left" bgcolor="#800080"><font face="Arial" color="#FFFF00">&#9733; Ejemplo: behavior="scroll" direction="left" &#9733;</font></marquee>
+		<br>
+		<marquee behavior="slide" direction="right" bgcolor="#008080"><font face="Arial">&#9733; Ejemplo: behavior="slide" direction="right" &#9733;</font></marquee>
+
+		<p align="right"><a href="#arriba"><font face="Arial" size="2">&#9650; Volver al índice</font></a></p>
+		<hr width="60%" color="#808080">
+
+		<!-- ===================== TEMA 4 ===================== -->
+		<h2 id="tema4"><font face="Arial" color="#00FF00">IV.</font> <font face="Arial" color="#FFFF00">Caracteres especiales (entidades)</font></h2>
+
+		<p align="justify">
+			<font face="Arial">
+				Algunos caracteres no se pueden escribir directamente porque HTML los usa (como <tt>&lt;</tt> o <tt>&gt;</tt>)
+				o porque pueden dar problemas de codificación. Se escriben con una <b>entidad</b>: empiezan por <tt>&amp;</tt> y acaban en <tt>;</tt>.
+			</font>
+		</p>
+
+		<pre><font color="#FFFF00">Carácter    Entidad          Carácter    Entidad</font>
+<font color="#00FF00">  &lt;         &amp;lt;               &euro;         &amp;euro;
+  &gt;         &amp;gt;               &amp;         &amp;amp;
+  á         &amp;aacute;           &quot;         &amp;quot;
+  é         &amp;eacute;           &iquest;         &amp;iquest;
+  í         &amp;iacute;           &iexcl;         &amp;iexcl;
+  ó         &amp;oacute;           &ccedil;         &amp;ccedil;
+  ú         &amp;uacute;           &uuml;         &amp;uuml;
+  ñ         &amp;ntilde;           &middot;         &amp;middot;
+  Ñ         &amp;Ntilde;           &ordm; &ordf;       &amp;ordm; &amp;ordf;
+  &copy;         &amp;copy;             &reg;         &amp;reg;
+  &trade;         &amp;#153;             &not;         &amp;not;</font></pre>
+
+		<ul type="square">
+			<li><font face="Arial">Las mayúsculas acentuadas se escriben igual pero con la primera letra en mayúscula: <tt>&amp;Aacute;</tt> = &Aacute;</font></li>
+			<li><font face="Arial"><b><tt>&amp;nbsp;</tt></b> &rarr; espacio en blanco que no se "come" el navegador. Sirve para meter varios espacios seguidos: A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B</font></li>
+		</ul>
+
+		<p align="right"><a href="#arriba"><font face="Arial" size="2">&#9650; Volver al índice</font></a></p>
+		<hr width="60%" color="#808080">
+
+		<!-- ===================== TEMA 5 ===================== -->
+		<h2 id="tema5"><font face="Arial" color="#00FF00">V.</font> <font face="Arial" color="#FFFF00">Colores</font></h2>
+
+		<p align="justify">
+			<font face="Arial">
+				Los colores se indican con su <b>nombre en inglés</b> o en <b>hexadecimal</b>: <tt>#RRGGBB</tt>
+				(dos cifras para el rojo, dos para el verde y dos para el azul, de 00 a FF).
+			</font>
+		</p>
+
+		<center>
+			<font face="Courier New" size="4">
+				<font color="#FFFFFF">&#9632; #FFFFFF white</font> &nbsp;
+				<font color="#000000">&#9632;</font> #000000 black &nbsp;
+				<font color="#000080">&#9632;</font> #000080 navy<br>
+				<font color="#0000FF">&#9632;</font> #0000FF blue &nbsp;
+				<font color="#008000">&#9632; #008000 green</font> &nbsp;
+				<font color="#008080">&#9632; #008080 teal</font><br>
+				<font color="#00FF00">&#9632; #00FF00 lime</font> &nbsp;
+				<font color="#00FFFF">&#9632; #00FFFF aqua</font> &nbsp;
+				<font color="#800000">&#9632;</font> #800000 maroon<br>
+				<font color="#800080">&#9632;</font> #800080 purple &nbsp;
+				<font color="#808000">&#9632; #808000 olive</font> &nbsp;
+				<font color="#808080">&#9632; #808080 gray</font><br>
+				<font color="#C0C0C0">&#9632; #C0C0C0 silver</font> &nbsp;
+				<font color="#FF0000">&#9632; #FF0000 red</font> &nbsp;
+				<font color="#FF00FF">&#9632; #FF00FF fuchsia</font> &nbsp;
+				<font color="#FFFF00">&#9632; #FFFF00 yellow</font>
+			</font>
+		</center>

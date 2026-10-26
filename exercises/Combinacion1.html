@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Combinación de celdas 1</title>
+</head>
+<body>
+    <table border="1">
+        <caption>Combinando celdas</caption>
+        <thead>
+            <tr>
+                <th>Columna 1</th>
+                <th>Columna 2</th>
+                <th>Columna 3</th>
+                <th>Columna 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2">F1: C1 y C2</td>
+                <td rowspan="2">F1 y F2: C3</td>
+                <td>F1 C4</td>
+            </tr>
+            <tr>
+                <td>F2 C1</td>
+                <td>F2 C2</td>
+                <td>F2 C4</td>
+            </tr>
+            <tr>
+                <td>F3 C1</td>
+                <td>F3 C2</td>
+                <td>F3 C3</td>
+                <td>F3 C4</td>
+            </tr>
+            <tr>
+                <td>F4 C1</td>
+                <td colspan="2" rowspan="3">F4, F5 y F6: C2 y C3</td>
+                <td>F4 C4</td>
+            </tr>
+            <tr>
+                <td>F5 C1</td>
+                <td rowspan="2">F5 y F6: C4</td>
+            </tr>
+            <tr>
+                <td>F6 C1</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Total 1</th>
+                <th>Total 2</th>
+                <th>Total 3</th>
+                <th>Total 4</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
